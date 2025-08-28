@@ -18,14 +18,15 @@ target_include_directories(${PROJECT_NAME} PRIVATE
     ${PQXX_INCLUDE_DIRS}
 )
 
+# Include Aeron headers and project includes
+target_include_directories(${PROJECT_NAME} PRIVATE 
+    ${CMAKE_SOURCE_DIR}/include
+    /usr/local/include
+)
+
 target_link_libraries(${PROJECT_NAME} PRIVATE
     aeronWrapper::aeronWrapper
     /usr/local/lib/libquillLogger.a
     /usr/local/lib/libDbFactory.a
     ${PQXX_LIBRARIES}
-)
-# Include Aeron headers and project includes
-target_include_directories(${PROJECT_NAME} PRIVATE 
-    ${CMAKE_SOURCE_DIR}/include
-    /usr/local/include
 )
