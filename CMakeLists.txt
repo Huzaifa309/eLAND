@@ -29,12 +29,3 @@ target_include_directories(${PROJECT_NAME} PRIVATE
     ${CMAKE_SOURCE_DIR}/include
     /usr/local/include
 )
-
-target_link_libraries(${PROJECT_NAME} PRIVATE
-    /usr/local/lib/libaeronWrapper.a
-    /usr/local/lib/libquillLogger.a
-    /usr/local/lib/libDbFactory.a
-    aeron_client
-    aeron_driver
-    ${PQXX_LIBRARIES}
-)
