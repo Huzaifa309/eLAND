@@ -30,9 +30,9 @@ int main(int argc, char** argv) {
     });
 
     try {
-        auto eLAND = std::make_unique<eLandEngine>();
+        auto eLand = std::make_unique<eLandEngine>();
 
-        eLAND->start();
+        eLand->start();
 
         while (keepRunning) {
             std::this_thread::sleep_for(std::chrono::milliseconds(500));
@@ -40,7 +40,7 @@ int main(int argc, char** argv) {
 
         if (inputThread.joinable()) inputThread.join();
 
-        eLAND->stop();
+        eLand->stop();
         return EXIT_SUCCESS;
     } catch (const std::exception& e) {
         qLogger::get().error_fast("Error: {}", e.what());

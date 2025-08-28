@@ -290,15 +290,15 @@ chmod +x install_dependencies.sh
 ```
 .
 ├── CMakeLists.txt
-├── login-schema.xml       # SBE schema definition
+├── login-schema.xml             # SBE schema definition
 ├── sbe-all-1.36.0-SNAPSHOT.jar  # SBE code generator
 ├── src
-|   ├── eLandEngine.h         # Engine class definition
-|   ├── eLandEngine.cpp       # Engine class implementation
-|   ├── helper.h              # Helper functions
-|   ├── main.cpp              # Application entry point
+|   ├── eLandEngine.h            # Engine class definition
+|   ├── eLandEngine.cpp          # Engine class implementation
+|   ├── helper.h                 # Helper functions
+|   ├── main.cpp                 # Application entry point
 └── build/
-    └── logs/                 # Log output directory
+    └── logs/                    # Log output directory
 ```
 
 ---
