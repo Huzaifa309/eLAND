@@ -1,20 +1,3 @@
-cmake_minimum_required(VERSION 3.16)
-project(eLAND VERSION 1.0.0 LANGUAGES CXX)
-
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
-
-# Find libpqxx
-find_package(PkgConfig REQUIRED)
-pkg_check_modules(PQXX REQUIRED libpqxx)
-
-# Collect source files
-file(GLOB SOURCE_FILES "src/*.cpp")
-
-# Create a single eLAND executable
-add_executable(${PROJECT_NAME} ${SOURCE_FILES})
-cmake_minimum_required(VERSION 3.16)
 project(eLAND VERSION 1.0.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
