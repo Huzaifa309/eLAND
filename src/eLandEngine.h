@@ -8,11 +8,11 @@
 #include "MessageHandler.h"
 #include "aeron_wrapper.h"
 
-class eLANDEngine final {
+class eLandEngine final {
    public:
-    eLANDEngine() noexcept;
+    eLandEngine() noexcept;
 
-    ~eLANDEngine() noexcept;
+    ~eLandEngine() noexcept;
 
     void start() noexcept;
 

@@ -1,11 +1,11 @@
-#include "eLANDEngine.h"
+#include "eLandEngine.h"
 
 #include <exception>
 
 #include "Config.h"
 #include "loggerlib.h"
 
-eLANDEngine::eLANDEngine() noexcept
+eLandEngine::eLandEngine() noexcept
     : _running(false), _packetsReceived(0), _messageHandler() {
     try {
         auto &cfg = Config::get();
@@ -28,9 +28,9 @@ eLANDEngine::eLANDEngine() noexcept
     }
 }
 
-eLANDEngine::~eLANDEngine() noexcept { stop(); }
+eLandEngine::~eLandEngine() noexcept { stop(); }
 
-void eLANDEngine::start() noexcept {
+void eLandEngine::start() noexcept {
     if (!_running) return;
 
     qLogger::get().info_fast("Starting eLAND engine...");
@@ -41,7 +41,7 @@ void eLANDEngine::start() noexcept {
         });
 }
 
-void eLANDEngine::stop() noexcept {
+void eLandEngine::stop() noexcept {
     if (!_running) return;
 
     if (_backgroundPoller) {
@@ -52,7 +52,7 @@ void eLANDEngine::stop() noexcept {
     qLogger::get().info_fast("eLAND engine stopped.");
 }
 
-void eLANDEngine::process_message(
+void eLandEngine::process_message(
     const aeron_wrapper::FragmentData &fragmentData) noexcept {
     ++_packetsReceived;
     try {
@@ -63,7 +63,7 @@ void eLANDEngine::process_message(
     }
 }
 
-void eLANDEngine::send_response(std::vector<char> &buffer) noexcept {
+void eLandEngine::send_response(std::vector<char> &buffer) noexcept {
     if (!_publication) return;
 
     if (buffer.empty()) return;
