@@ -19,7 +19,7 @@ add_executable(${PROJECT_NAME} ${SOURCES})
 
 # Include project includes and lib includes
 target_include_directories(${PROJECT_NAME} PRIVATE 
-    ${CMAKE_SOURCE_DIR}/include
+    ${CMAKE_SOURCE_DIR}/src
     /usr/local/include
 )
 
